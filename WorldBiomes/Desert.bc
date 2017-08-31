@@ -107,11 +107,11 @@ StoneBlock: minecraft:stone
 
 SurfaceBlock: minecraft:sand
 
-GroundBlock: minecraft:sand
+GroundBlock: minecraft:stone
 
 SurfaceAndGroundControl: 
 
-ReplacedBlocks: None
+ReplacedBlocks: (minecraft:stone,minecraft:sand,64,255)
 
 ################################
 # Water / Lava & Frozen States #
@@ -159,55 +159,22 @@ FoliageColorIsMultiplier: true
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
-Ore(minecraft:stained_hardened_clay:1,33,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:stained_hardened_clay:9,33,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:stained_hardened_clay:7,33,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:stained_hardened_clay,33,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:dirt,33,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:gravel,33,8,100.0,0,255,minecraft:stone)
-Ore(minecraft:stone:1,33,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:stone:3,33,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:stone:5,33,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:bone_block,17,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:coal_ore,12,20,100.0,0,255,minecraft:stone)
-Ore(minecraft:iron_ore,9,2,100.0,0,255,minecraft:stone)
-Ore(minecraft:gold_ore,9,20,100.0,0,255,minecraft:stone)
-Ore(minecraft:redstone_ore,8,8,100.0,0,255,minecraft:stone)
-Ore(minecraft:diamond_ore,7,7,100.0,0,255,minecraft:stone)
-Ore(minecraft:emerald_ore,7,7,100.0,0,255,minecraft:stone)
-Ore(minecraft:lapis_ore,7,2,100.0,0,50,minecraft:stone)
+Ore(minecraft:coal_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:iron_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:gold_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:redstone_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:diamond_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:emerald_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:lapis_ore,4,100,100.0,0,63,minecraft:stone)
 UnderGroundLake(25,60,2,5.0,0,49)
 Liquid(minecraft:water,20,100.0,8,255,minecraft:stone)
 Liquid(minecraft:lava,10,100.0,8,255,minecraft:stone)
-SmallLake(minecraft:coal_block,4,7.0,8,119)
 Well(minecraft:sandstone,minecraft:stone_slab:1,minecraft:water,1,0.1,2,255,minecraft:sand)
 UnderWaterOre(minecraft:sand,7,3,100.0,minecraft:dirt,minecraft:grass)
 UnderWaterOre(minecraft:clay,4,1,100.0,minecraft:dirt,minecraft:clay)
 UnderWaterOre(minecraft:gravel,6,1,100.0,minecraft:dirt,minecraft:grass)
 Dungeon(8,100.0,0,255)
 Fossil(1.156)
-Grass(minecraft:deadbush,NotGrouped,4,100.0,minecraft:sand,minecraft:hardened_clay,minecraft:stained_hardened_clay,minecraft:dirt)
-Plant(Dandelion,2,100.0,0,255,minecraft:grass,minecraft:dirt)
-Plant(minecraft:pumpkin,1,3.0,0,255,minecraft:grass)
-Reed(minecraft:reeds,10,100.0,0,255,minecraft:grass,minecraft:dirt,minecraft:sand)
-Cactus(minecraft:cactus,20,100.0,0,255,minecraft:sand)
-Cactus(minecraft:bone_block,20,100.0,0,255,minecraft:sand)
-Cactus(minecraft:dispenser,20,100.0,0,255,minecraft:sand)
-Cactus(minecraft:sticky_piston,20,100.0,0,255,minecraft:sand)
-Cactus(minecraft:piston,20,100.0,0,255,minecraft:sand)
-Cactus(minecraft:furnace,20,100.0,0,255,minecraft:sand)
-Cactus(minecraft:anvil,20,100.0,0,255,minecraft:sand)
-Cactus(minecraft:hopper,20,100.0,0,255,minecraft:sand)
-Cactus(minecraft:dropper,20,100.0,0,255,minecraft:sand)
-Cactus(minecraft:observer,20,100.0,0,255,minecraft:sand)
-Plant(minecraft:redstone_wire,100,100.0,0,255,minecraft:sand)
-Plant(minecraft:redstone_torch,100,100.0,0,255,minecraft:sand)
-Plant(minecraft:unpowered_repeater,10,100.0,0,255,minecraft:sand)
-Plant(minecraft:cauldron,10,100.0,0,255,minecraft:sand)
-Plant(minecraft:light_weighted_pressure_plate,10,100.0,0,255,minecraft:sand)
-Plant(minecraft:heavy_weighted_pressure_plate,10,100.0,0,255,minecraft:sand)
-Plant(minecraft:powered_comparator,10,100.0,0,255,minecraft:sand)
-Plant(minecraft:daylight_detector,10,100.0,0,255,minecraft:sand)
 CustomObject(UseWorld)
 
 #######################################################################
