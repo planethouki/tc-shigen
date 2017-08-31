@@ -1,0 +1,254 @@
+
+#######################################################################
+# +-----------------------------------------------------------------+ #
+# |                        Biome Inheritance                        | #
+# +-----------------------------------------------------------------+ #
+#######################################################################
+
+BiomeExtends: 
+
+ResourceInheritance: true
+
+
+#######################################################################
+# +-----------------------------------------------------------------+ #
+# |                         Biome placement                         | #
+# +-----------------------------------------------------------------+ #
+#######################################################################
+
+BiomeSize: 4
+
+BiomeRarity: 100
+
+BiomeColor: #A86B21
+
+ReplaceToBiomeName: Desert M
+
+####################
+# Isle biomes only #
+####################
+
+IsleInBiome: Desert
+
+BiomeSizeWhenIsle: 6
+
+BiomeRarityWhenIsle: 99
+
+######################
+# Border biomes only #
+######################
+
+BiomeIsBorder: Mesa
+
+NotBorderNear: Ocean, Mesa Plateau, Mesa Plateau F, Mesa Plateau M, Mesa Plateau F M, Mesa (Bryce)
+
+BiomeSizeWhenBorder: 6
+
+
+#######################################################################
+# +-----------------------------------------------------------------+ #
+# |                  Terrain height and volatility                  | #
+# +-----------------------------------------------------------------+ #
+#######################################################################
+
+BiomeHeight: 1.0
+
+BiomeVolatility: 0.05
+
+SmoothRadius: 2
+
+MaxAverageHeight: 0.0
+
+MaxAverageDepth: 0.0
+
+Volatility1: 0.0
+
+Volatility2: 0.0
+
+VolatilityWeight1: 0.5
+
+VolatilityWeight2: 0.45
+
+DisableBiomeHeight: false
+
+CustomHeightControl: 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+
+
+#######################################################################
+# +-----------------------------------------------------------------+ #
+# |                              Rivers                             | #
+# +-----------------------------------------------------------------+ #
+#######################################################################
+
+########################
+# ImprovedRivers:false #
+########################
+
+RiverBiome: River
+
+#######################
+# ImprovedRivers:true #
+#######################
+
+RiverHeight: -1.0
+
+RiverVolatility: 0.3
+
+RiverWaterLevel: 63
+
+RiverCustomHeightControl: 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+
+
+#######################################################################
+# +-----------------------------------------------------------------+ #
+# |                              Blocks                             | #
+# +-----------------------------------------------------------------+ #
+#######################################################################
+
+StoneBlock: minecraft:stone
+
+SurfaceBlock: minecraft:sandstone
+
+GroundBlock: minecraft:sandstone
+
+SurfaceAndGroundControl: 
+
+ReplacedBlocks: None
+
+################################
+# Water / Lava & Frozen States #
+################################
+
+UseWorldWaterLevel: true
+
+WaterLevelMax: 63
+
+WaterLevelMin: 0
+
+WaterBlock: minecraft:water
+
+IceBlock: minecraft:ice
+
+CooledLavaBlock: minecraft:lava
+
+
+#######################################################################
+# +-----------------------------------------------------------------+ #
+# |                       Visuals and weather                       | #
+# +-----------------------------------------------------------------+ #
+#######################################################################
+
+BiomeTemperature: 2.0
+
+BiomeWetness: 0.0
+
+SkyColor: #7BA5FF
+
+WaterColor: #FFFFFF
+
+GrassColor: #FFFFFF
+
+GrassColorIsMultiplier: true
+
+FoliageColor: #FFFFFF
+
+FoliageColorIsMultiplier: true
+
+
+#######################################################################
+# +-----------------------------------------------------------------+ #
+# |                          Resource queue                         | #
+# +-----------------------------------------------------------------+ #
+#######################################################################
+
+Ore(minecraft:coal_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:iron_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:gold_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:redstone_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:diamond_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:emerald_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:lapis_ore,4,100,100.0,0,63,minecraft:stone)
+UnderGroundLake(25,60,2,5.0,0,49)
+Liquid(minecraft:water,20,100.0,8,255,minecraft:stone)
+Liquid(minecraft:lava,10,100.0,8,255,minecraft:stone)
+SmallLake(minecraft:coal_block,4,7.0,8,119)
+Well(minecraft:sandstone,minecraft:stone_slab:1,minecraft:water,1,0.1,2,255,minecraft:sand)
+UnderWaterOre(minecraft:sand,7,3,100.0,minecraft:dirt,minecraft:grass)
+UnderWaterOre(minecraft:clay,4,1,100.0,minecraft:dirt,minecraft:clay)
+UnderWaterOre(minecraft:gravel,6,1,100.0,minecraft:dirt,minecraft:grass)
+Dungeon(8,100.0,0,255)
+Fossil(1.156)
+Grass(minecraft:deadbush,NotGrouped,4,100.0,minecraft:sand,minecraft:hardened_clay,minecraft:stained_hardened_clay,minecraft:dirt)
+Cactus(minecraft:cactus,20,100.0,0,255,minecraft:sand)
+Cactus(minecraft:bone_block,20,100.0,0,255,minecraft:sand,minecraft:sandstone)
+Cactus(minecraft:dispenser,20,100.0,0,255,minecraft:sand,minecraft:sandstone)
+Cactus(minecraft:sticky_piston,20,100.0,0,255,minecraft:sand,minecraft:sandstone)
+Cactus(minecraft:piston,20,100.0,0,255,minecraft:sand,minecraft:sandstone)
+Cactus(minecraft:furnace,20,100.0,0,255,minecraft:sand,minecraft:sandstone)
+Cactus(minecraft:anvil,20,100.0,0,255,minecraft:sand,minecraft:sandstone)
+Cactus(minecraft:hopper,20,100.0,0,255,minecraft:sand,minecraft:sandstone)
+Cactus(minecraft:dropper,20,100.0,0,255,minecraft:sand,minecraft:sandstone)
+Cactus(minecraft:observer,20,100.0,0,255,minecraft:sand,minecraft:sandstone)
+Plant(minecraft:redstone_wire,100,100.0,0,255,minecraft:sand,minecraft:sandstone)
+Plant(minecraft:redstone_torch,100,100.0,0,255,minecraft:sand,minecraft:sandstone)
+Plant(minecraft:unpowered_repeater,10,100.0,0,255,minecraft:sand,minecraft:sandstone)
+Plant(minecraft:cauldron,10,100.0,0,255,minecraft:sand,minecraft:sandstone)
+Plant(minecraft:light_weighted_pressure_plate,10,100.0,0,255,minecraft:sand,minecraft:sandstone)
+Plant(minecraft:heavy_weighted_pressure_plate,10,100.0,0,255,minecraft:sand,minecraft:sandstone)
+Plant(minecraft:powered_comparator,10,100.0,0,255,minecraft:sand,minecraft:sandstone)
+Plant(minecraft:daylight_detector,10,100.0,0,255,minecraft:sand,minecraft:sandstone)
+CustomObject(UseWorld)
+
+#######################################################################
+# +-----------------------------------------------------------------+ #
+# |                         Sapling resource                        | #
+# +-----------------------------------------------------------------+ #
+#######################################################################
+
+
+#######################################################################
+# +-----------------------------------------------------------------+ #
+# |                          Custom objects                         | #
+# +-----------------------------------------------------------------+ #
+#######################################################################
+
+BiomeObjects: 
+
+
+#######################################################################
+# +-----------------------------------------------------------------+ #
+# |                            Structures                           | #
+# +-----------------------------------------------------------------+ #
+#######################################################################
+
+StrongholdsEnabled: false
+
+OceanMonumentsEnabled: false
+
+NetherFortressesEnabled: false
+
+MansionsEnabled: false
+
+VillageType: sandstone
+
+MineshaftType: normal
+
+MineshaftRarity: 1.0
+
+RareBuildingType: disabled
+
+
+#######################################################################
+# +-----------------------------------------------------------------+ #
+# |                           Mob spawning                          | #
+# +-----------------------------------------------------------------+ #
+#######################################################################
+
+SpawnMonsters: [{"mob": "spider", "weight": 100, "min": 4, "max": 4}, {"mob": "zombie", "weight": 100, "min": 4, "max": 4}, {"mob": "skeleton", "weight": 100, "min": 4, "max": 4}, {"mob": "creeper", "weight": 100, "min": 4, "max": 4}, {"mob": "slime", "weight": 100, "min": 4, "max": 4}, {"mob": "enderman", "weight": 10, "min": 1, "max": 4}, {"mob": "witch", "weight": 5, "min": 1, "max": 1}]
+
+SpawnCreatures: [{"mob": "sheep", "weight": 12, "min": 4, "max": 4}, {"mob": "pig", "weight": 10, "min": 4, "max": 4}, {"mob": "chicken", "weight": 10, "min": 4, "max": 4}, {"mob": "cow", "weight": 8, "min": 4, "max": 4}]
+
+SpawnWaterCreatures: [{"mob": "squid", "weight": 10, "min": 4, "max": 4}]
+
+SpawnAmbientCreatures: [{"mob": "bat", "weight": 10, "min": 8, "max": 8}]
+
