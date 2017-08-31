@@ -111,7 +111,7 @@ GroundBlock: minecraft:netherrack
 
 SurfaceAndGroundControl: 
 
-ReplacedBlocks: None
+ReplacedBlocks: (minecraft:stone,minecraft:netherrack,64,255)
 
 ################################
 # Water / Lava & Frozen States #
@@ -159,23 +159,16 @@ FoliageColorIsMultiplier: true
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
-Ore(minecraft:stained_hardened_clay,33,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:stained_hardened_clay:6,33,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:stained_hardened_clay:5,33,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:stained_hardened_clay:3,33,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:quartz_block,9,20,100.0,0,255,minecraft:stone)
+Ore(minecraft:coal_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:iron_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:gold_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:redstone_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:diamond_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:emerald_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:lapis_ore,4,100,100.0,0,63,minecraft:stone)
 Ore(minecraft:quartz_ore,50,30,100.0,0,255,minecraft:netherrack)
 Ore(minecraft:soul_sand,33,20,100.0,0,255,minecraft:netherrack)
 Ore(minecraft:end_stone,33,20,100.0,0,255,minecraft:netherrack)
-Ore(minecraft:dirt,33,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:gravel,33,8,100.0,0,255,minecraft:stone)
-Ore(minecraft:coal_ore,17,20,100.0,0,255,minecraft:stone)
-Ore(minecraft:iron_ore,9,20,100.0,0,255,minecraft:stone)
-Ore(minecraft:gold_ore,9,2,100.0,0,255,minecraft:stone)
-Ore(minecraft:redstone_ore,8,8,100.0,0,255,minecraft:stone)
-Ore(minecraft:diamond_ore,8,3,100.0,0,255,minecraft:stone)
-Ore(minecraft:emerald_ore,8,3,100.0,0,255,minecraft:stone)
-Ore(minecraft:lapis_ore,7,1,100.0,0,255,minecraft:stone)
 UnderGroundLake(25,60,2,5.0,0,49)
 Liquid(minecraft:water,20,100.0,8,255,minecraft:stone)
 Liquid(minecraft:lava,10,100.0,8,255,minecraft:stone)
@@ -192,7 +185,6 @@ Plant(BrownMushroom,8,25.0,0,255,minecraft:netherrack,minecraft:dirt)
 Plant(minecraft:fire,10,100.0,0,255,minecraft:netherrack)
 Plant(minecraft:nether_wart,10,100.0,0,255,minecraft:soul_sand)
 CustomObject(UseWorld)
-CustomObject(ShulkerBoxLod)
 Boulder(minecraft:nether_brick,2,30.0,0,256,minecraft:netherrack)
 IceSpike(minecraft:nether_brick,HugeSpike,3,1.66,60,255,minecraft:ice,minecraft:dirt,minecraft:netherrack)
 IceSpike(minecraft:obsidian,HugeSpike,3,1.66,60,255,minecraft:ice,minecraft:dirt,minecraft:netherrack)

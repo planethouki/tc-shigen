@@ -28,7 +28,7 @@ BiomeColor: #056621
 
 IsleInBiome: Plains
 
-BiomeSizeWhenIsle: 7
+BiomeSizeWhenIsle: 6
 
 BiomeRarityWhenIsle: 99
 
@@ -111,7 +111,7 @@ GroundBlock: minecraft:dirt
 
 SurfaceAndGroundControl: 
 
-ReplacedBlocks: None
+ReplacedBlocks: (minecraft:stone,minecraft:dirt,64,255)
 
 ################################
 # Water / Lava & Frozen States #
@@ -159,21 +159,13 @@ FoliageColorIsMultiplier: true
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
-Ore(minecraft:log,33,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:log:1,33,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:log:2,33,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:log:3,33,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:log2,33,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:log2:1,33,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:dirt,33,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:gravel,33,8,100.0,0,255,minecraft:stone)
-Ore(minecraft:coal_ore,17,20,100.0,0,255,minecraft:stone)
-Ore(minecraft:iron_ore,9,20,100.0,0,255,minecraft:stone)
-Ore(minecraft:gold_ore,9,2,100.0,0,255,minecraft:stone)
-Ore(minecraft:redstone_ore,8,8,100.0,0,255,minecraft:stone)
-Ore(minecraft:diamond_ore,8,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:emerald_ore,8,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:lapis_ore,7,1,100.0,0,255,minecraft:stone)
+Ore(minecraft:coal_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:iron_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:gold_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:redstone_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:diamond_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:emerald_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:lapis_ore,4,100,100.0,0,63,minecraft:stone)
 UnderGroundLake(25,60,2,5.0,0,49)
 Liquid(minecraft:water,20,100.0,8,255,minecraft:stone)
 Liquid(minecraft:lava,10,100.0,8,255,minecraft:stone)

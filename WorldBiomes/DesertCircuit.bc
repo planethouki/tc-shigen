@@ -20,17 +20,17 @@ BiomeSize: 4
 
 BiomeRarity: 100
 
-BiomeColor: #990000
+BiomeColor: #A86B21
 
-ReplaceToBiomeName: Hell
+ReplaceToBiomeName: Desert M
 
 ####################
 # Isle biomes only #
 ####################
 
-IsleInBiome: Hell
+IsleInBiome: Desert
 
-BiomeSizeWhenIsle: 7
+BiomeSizeWhenIsle: 6
 
 BiomeRarityWhenIsle: 99
 
@@ -38,11 +38,11 @@ BiomeRarityWhenIsle: 99
 # Border biomes only #
 ######################
 
-BiomeIsBorder: 
+BiomeIsBorder: Mesa
 
-NotBorderNear: 
+NotBorderNear: Ocean, Mesa Plateau, Mesa Plateau F, Mesa Plateau M, Mesa Plateau F M, Mesa (Bryce)
 
-BiomeSizeWhenBorder: 8
+BiomeSizeWhenBorder: 6
 
 
 #######################################################################
@@ -53,7 +53,7 @@ BiomeSizeWhenBorder: 8
 
 BiomeHeight: 1.0
 
-BiomeVolatility: 0.0
+BiomeVolatility: 0.05
 
 SmoothRadius: 2
 
@@ -107,9 +107,9 @@ RiverCustomHeightControl: 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
 
 StoneBlock: minecraft:stone
 
-SurfaceBlock: minecraft:dirt
+SurfaceBlock: minecraft:sandstone
 
-GroundBlock: minecraft:netherrack
+GroundBlock: minecraft:sandstone
 
 SurfaceAndGroundControl: 
 
@@ -161,31 +161,42 @@ FoliageColorIsMultiplier: true
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
-Ore(minecraft:stained_hardened_clay,33,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:stained_hardened_clay:6,33,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:stained_hardened_clay:5,33,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:stained_hardened_clay:3,33,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:quartz_block,33,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:dirt,33,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:gravel,33,8,100.0,0,255,minecraft:stone)
-Ore(minecraft:coal_ore,17,20,100.0,0,255,minecraft:stone)
-Ore(minecraft:iron_ore,9,20,100.0,0,255,minecraft:stone)
-Ore(minecraft:gold_ore,9,2,100.0,0,255,minecraft:stone)
-Ore(minecraft:redstone_ore,8,8,100.0,0,255,minecraft:stone)
-Ore(minecraft:diamond_ore,8,1,100.0,0,255,minecraft:stone)
-Ore(minecraft:emerald_ore,8,1,100.0,0,255,minecraft:stone)
-Ore(minecraft:lapis_ore,7,1,100.0,0,255,minecraft:stone)
+Ore(minecraft:coal_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:iron_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:gold_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:redstone_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:diamond_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:emerald_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:lapis_ore,4,100,100.0,0,63,minecraft:stone)
 UnderGroundLake(25,60,2,5.0,0,49)
 Liquid(minecraft:water,20,100.0,8,255,minecraft:stone)
 Liquid(minecraft:lava,10,100.0,8,255,minecraft:stone)
+SmallLake(minecraft:coal_block,4,7.0,8,119)
+Well(minecraft:sandstone,minecraft:stone_slab:1,minecraft:water,1,0.1,2,255,minecraft:sand)
 UnderWaterOre(minecraft:sand,7,3,100.0,minecraft:dirt,minecraft:grass)
 UnderWaterOre(minecraft:clay,4,1,100.0,minecraft:dirt,minecraft:clay)
 UnderWaterOre(minecraft:gravel,6,1,100.0,minecraft:dirt,minecraft:grass)
-Tree(3,HugeGlow1,33,HugeGlow2,33,HugeGlow3,100)
 Dungeon(8,100.0,0,255)
-Plant(RedMushroom,8,12.0,0,255,minecraft:netherrack,minecraft:dirt)
-Plant(BrownMushroom,8,25.0,0,255,minecraft:netherrack,minecraft:dirt)
-Plant(minecraft:nether_wart,1,1.0,0,255,minecraft:soul_sand)
+Fossil(1.156)
+Grass(minecraft:deadbush,NotGrouped,4,100.0,minecraft:sand,minecraft:hardened_clay,minecraft:stained_hardened_clay,minecraft:dirt)
+Cactus(minecraft:cactus,20,100.0,0,255,minecraft:sand)
+Cactus(minecraft:bone_block,20,100.0,0,255,minecraft:sand,minecraft:sandstone)
+Cactus(minecraft:dispenser,20,100.0,0,255,minecraft:sand,minecraft:sandstone)
+Cactus(minecraft:sticky_piston,20,100.0,0,255,minecraft:sand,minecraft:sandstone)
+Cactus(minecraft:piston,20,100.0,0,255,minecraft:sand,minecraft:sandstone)
+Cactus(minecraft:furnace,20,100.0,0,255,minecraft:sand,minecraft:sandstone)
+Cactus(minecraft:anvil,20,100.0,0,255,minecraft:sand,minecraft:sandstone)
+Cactus(minecraft:hopper,20,100.0,0,255,minecraft:sand,minecraft:sandstone)
+Cactus(minecraft:dropper,20,100.0,0,255,minecraft:sand,minecraft:sandstone)
+Cactus(minecraft:observer,20,100.0,0,255,minecraft:sand,minecraft:sandstone)
+Plant(minecraft:redstone_wire,100,100.0,0,255,minecraft:sand,minecraft:sandstone)
+Plant(minecraft:redstone_torch,100,100.0,0,255,minecraft:sand,minecraft:sandstone)
+Plant(minecraft:unpowered_repeater,10,100.0,0,255,minecraft:sand,minecraft:sandstone)
+Plant(minecraft:cauldron,10,100.0,0,255,minecraft:sand,minecraft:sandstone)
+Plant(minecraft:light_weighted_pressure_plate,10,100.0,0,255,minecraft:sand,minecraft:sandstone)
+Plant(minecraft:heavy_weighted_pressure_plate,10,100.0,0,255,minecraft:sand,minecraft:sandstone)
+Plant(minecraft:powered_comparator,10,100.0,0,255,minecraft:sand,minecraft:sandstone)
+Plant(minecraft:daylight_detector,10,100.0,0,255,minecraft:sand,minecraft:sandstone)
 CustomObject(UseWorld)
 
 #######################################################################
@@ -210,15 +221,15 @@ BiomeObjects:
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
-StrongholdsEnabled: true
+StrongholdsEnabled: false
 
 OceanMonumentsEnabled: false
 
-NetherFortressesEnabled: true
+NetherFortressesEnabled: false
 
 MansionsEnabled: false
 
-VillageType: disabled
+VillageType: sandstone
 
 MineshaftType: normal
 
@@ -235,9 +246,9 @@ RareBuildingType: disabled
 
 SpawnMonsters: [{"mob": "spider", "weight": 100, "min": 4, "max": 4}, {"mob": "zombie", "weight": 100, "min": 4, "max": 4}, {"mob": "skeleton", "weight": 100, "min": 4, "max": 4}, {"mob": "creeper", "weight": 100, "min": 4, "max": 4}, {"mob": "slime", "weight": 100, "min": 4, "max": 4}, {"mob": "enderman", "weight": 10, "min": 1, "max": 4}, {"mob": "witch", "weight": 5, "min": 1, "max": 1}]
 
-SpawnCreatures: []
+SpawnCreatures: [{"mob": "sheep", "weight": 12, "min": 4, "max": 4}, {"mob": "pig", "weight": 10, "min": 4, "max": 4}, {"mob": "chicken", "weight": 10, "min": 4, "max": 4}, {"mob": "cow", "weight": 8, "min": 4, "max": 4}]
 
-SpawnWaterCreatures: []
+SpawnWaterCreatures: [{"mob": "squid", "weight": 10, "min": 4, "max": 4}]
 
-SpawnAmbientCreatures: []
+SpawnAmbientCreatures: [{"mob": "bat", "weight": 10, "min": 8, "max": 8}]
 
