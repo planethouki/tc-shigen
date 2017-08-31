@@ -49,7 +49,7 @@ BiomeSizeWhenBorder: 6
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
-BiomeHeight: 1.0
+BiomeHeight: 0.0
 
 BiomeVolatility: 0.0
 
@@ -107,11 +107,11 @@ StoneBlock: minecraft:stone
 
 SurfaceBlock: minecraft:sand:1
 
-GroundBlock: minecraft:sand:1
+GroundBlock: minecraft:stone
 
-SurfaceAndGroundControl: minecraft:dirt, minecraft:sand:1, -1.0, minecraft:grass, minecraft:sand:1, 0.0 
+SurfaceAndGroundControl: 
 
-ReplacedBlocks: None
+ReplacedBlocks: (minecraft:stone,minecraft:sand:1,64,255)
 
 ################################
 # Water / Lava & Frozen States #
@@ -159,19 +159,13 @@ FoliageColorIsMultiplier: true
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
-Ore(minecraft:stained_hardened_clay:4,33,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:stained_hardened_clay:12,33,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:stained_hardened_clay:14,33,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:stained_hardened_clay:15,33,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:dirt,33,10,100.0,0,255,minecraft:stone)
-Ore(minecraft:gravel,33,8,100.0,0,255,minecraft:stone)
-Ore(minecraft:coal_ore,17,2,100.0,0,255,minecraft:stone)
-Ore(minecraft:iron_ore,9,40,100.0,0,255,minecraft:stone)
-Ore(minecraft:gold_ore,9,2,100.0,0,255,minecraft:stone)
-Ore(minecraft:redstone_ore,8,2,100.0,0,255,minecraft:stone)
-Ore(minecraft:diamond_ore,8,8,100.0,0,255,minecraft:stone)
-Ore(minecraft:emerald_ore,8,8,100.0,0,255,minecraft:stone)
-Ore(minecraft:lapis_ore,7,2,100.0,0,255,minecraft:stone)
+Ore(minecraft:coal_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:iron_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:gold_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:redstone_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:diamond_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:emerald_ore,4,100,100.0,0,63,minecraft:stone)
+Ore(minecraft:lapis_ore,4,100,100.0,0,63,minecraft:stone)
 Liquid(minecraft:water,20,100.0,8,255,minecraft:stone)
 Liquid(minecraft:lava,10,100.0,8,255,minecraft:stone)
 SmallLake(minecraft:water,4,7.0,8,119)
@@ -188,6 +182,16 @@ Reed(minecraft:reeds,5,100.0,0,255,minecraft:grass,minecraft:dirt,minecraft:sand
 Cactus(minecraft:cactus,10,100.0,0,255,minecraft:sand)
 Cactus(minecraft:lit_pumpkin,30,100.0,0,255,minecraft:sand)
 CustomObject(UseWorld)
+Ore(minecraft:stained_hardened_clay,33,10,100.0,64,90,minecraft:air)
+Ore(minecraft:stained_hardened_clay:1,33,10,100.0,64,90,minecraft:air)
+Ore(minecraft:stained_hardened_clay:4,33,10,100.0,64,90,minecraft:air)
+Ore(minecraft:stained_hardened_clay:5,33,10,100.0,64,90,minecraft:air)
+Ore(minecraft:stained_hardened_clay:7,33,10,100.0,64,90,minecraft:air)
+Ore(minecraft:stained_hardened_clay:8,33,10,100.0,64,90,minecraft:air)
+Ore(minecraft:stained_hardened_clay:9,33,10,100.0,64,90,minecraft:air)
+Ore(minecraft:stained_hardened_clay:12,33,10,100.0,64,90,minecraft:air)
+Ore(minecraft:stained_hardened_clay:14,33,10,100.0,64,90,minecraft:air)
+Ore(minecraft:stained_hardened_clay:15,33,10,100.0,64,90,minecraft:air)
 
 #######################################################################
 # +-----------------------------------------------------------------+ #
