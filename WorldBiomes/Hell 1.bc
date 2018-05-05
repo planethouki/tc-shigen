@@ -1,0 +1,9 @@
+BiomeExtends: Hell
+ResourceInheritance: true
+ReplaceToBiomeName: Hell
+BiomeColor: #ff3232
+BiomeHeight: 1
+SmoothRadius: 5
+IceSpike(minecraft:nether_brick,HugeSpike,3,1.66,51,255,minecraft:ice,minecraft:dirt,minecraft:netherrack)
+IceSpike(minecraft:obsidian,HugeSpike,3,1.66,51,255,minecraft:ice,minecraft:dirt,minecraft:netherrack)
+IceSpike(minecraft:stained_hardened_clay:15,HugeSpike,3,1.66,51,255,minecraft:ice,minecraft:dirt,minecraft:netherrack)

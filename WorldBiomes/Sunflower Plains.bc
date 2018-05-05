@@ -1,0 +1,299 @@
+
+#######################################################################
+# +-----------------------------------------------------------------+ #
+# |                        Biome Inheritance                        | #
+# +-----------------------------------------------------------------+ #
+#######################################################################
+
+# This should be the value of the biomeConfig you wish to extend.
+# The extended config will be loaded, at which point the configs included below
+# will overwrite any configs loaded from the extended config.
+BiomeExtends:
+
+# When set to true, all resources of the parent biome (if any) will be copied
+# to the resources queue of this biome. If a resource in the parent biome looks
+# very similar to that of a child biome (for example, two ores of the same type)
+# it won't be copied.
+ResourceInheritance: true
+
+
+#######################################################################
+# +-----------------------------------------------------------------+ #
+# |                         Biome placement                         | #
+# +-----------------------------------------------------------------+ #
+#######################################################################
+
+# Biome size from 0 to GenerationDepth. Defines in which biome layer this biome will be generated (see GenerationDepth).
+# Higher numbers give a smaller biome, lower numbers a larger biome.
+# How this setting is used depends on the value of BiomeMode in the WorldConfig.
+# It will be used for:
+# - normal biomes, ice biomes, isle biomes and border biomes when BiomeMode is set to BeforeGroups
+# - biomes spawned as part of a BiomeGroup when BiomeMode is set to Normal.
+#   For biomes spawned as isles, borders or rivers other settings are available.
+#   Isle biomes:   BiomeSizeWhenIsle (see below)
+#   Border biomes: BiomeSizeWhenBorder (see below)
+#   River biomes:  RiverSize (see WorldConfig)
+BiomeSize: 4
+
+# Biome rarity from 100 to 1. If this is normal or ice biome - chance for spawn this biome then others.
+# Example for normal biome :
+#   100 rarity mean 1/6 chance than other ( with 6 default normal biomes).
+#   50 rarity mean 1/11 chance than other
+# For isle biomes see the BiomeRarityWhenIsle setting below.
+# Doesn`t work on Ocean and River (frozen versions too) biomes when not added as normal biome.
+BiomeRarity: 10
+
+# The hexadecimal color value of this biome. Used in the output of the /tc map command,
+# and used in the input of BiomeMode: FromImage.
+BiomeColor: #DEFF00
+
+####################
+# Isle biomes only #
+####################
+
+# To spawn a biome as an isle, you need to add it first to the
+# IsleBiomes list in the WorldConfig.
+
+# List of biomes in which this biome will spawn as an isle.
+# For example, Mushroom Isles spawn inside the Ocean biome.
+IsleInBiome:
+
+# Size of this biome when spawned as an isle biome in BiomeMode: Normal.
+# Valid values range from 0 to GenerationDepth.
+# Larger numbers give *smaller* islands. The biome must be smaller than the biome it's going
+# to spawn in, so the BiomeSizeWhenIsle number must be larger than the BiomeSize of the other biome.
+BiomeSizeWhenIsle: 6
+
+# Rarity of this biome when spawned as an isle biome in BiomeMode: Normal.
+BiomeRarityWhenIsle: 97
+
+######################
+# Border biomes only #
+######################
+
+# To spawn a biome as a border, you need to add it first to the
+# BorderBiomes list in the WorldConfig.
+
+# List of biomes this biome can be a border of.
+# For example, the Beach biome is a border on the Ocean biome, so
+# it can spawn anywhere on the border of an ocean.
+BiomeIsBorder:
+
+# List of biomes that cancel spawning of this biome.
+# For example, the Beach biome will never spawn next to an Extreme Hills biome.
+NotBorderNear:
+
+# Size of this biome when spawned as a border biome in BiomeMode: Normal.
+# Valid values range from 0 to GenerationDepth.
+# Larger numbers give *smaller* borders. The biome must be smaller than the biome it's going
+# to spawn in, so the BiomeSizeWhenBorder number must be larger than the BiomeSize of the other biome.
+BiomeSizeWhenBorder: 8
+
+
+#######################################################################
+# +-----------------------------------------------------------------+ #
+# |                  Terrain height and volatility                  | #
+# +-----------------------------------------------------------------+ #
+#######################################################################
+
+BiomeHeight: 1.0
+
+BiomeVolatility: 0.3
+
+SmoothRadius: 2
+
+MaxAverageHeight: 0.0
+
+MaxAverageDepth: 0.0
+
+Volatility1: 0.0
+
+Volatility2: 0.0
+
+VolatilityWeight1: 0.5
+
+VolatilityWeight2: 0.45
+
+DisableBiomeHeight: false
+
+CustomHeightControl: 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+
+
+#######################################################################
+# +-----------------------------------------------------------------+ #
+# |                              Rivers                             | #
+# +-----------------------------------------------------------------+ #
+#######################################################################
+
+########################
+# ImprovedRivers:false #
+########################
+
+RiverBiome: River
+
+#######################
+# ImprovedRivers:true #
+#######################
+
+RiverHeight: -1.0
+
+RiverVolatility: 0.3
+
+RiverWaterLevel: 63
+
+RiverCustomHeightControl: 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
+
+
+#######################################################################
+# +-----------------------------------------------------------------+ #
+# |                              Blocks                             | #
+# +-----------------------------------------------------------------+ #
+#######################################################################
+
+StoneBlock: minecraft:stone
+
+SurfaceBlock: minecraft:grass
+
+GroundBlock: minecraft:dirt
+
+SurfaceAndGroundControl:
+
+ReplacedBlocks:
+
+################################
+# Water / Lava & Frozen States #
+################################
+
+UseWorldWaterLevel: true
+
+WaterLevelMax: 63
+
+WaterLevelMin: 0
+
+WaterBlock: minecraft:water
+
+IceBlock: minecraft:ice
+
+CooledLavaBlock: minecraft:lava
+
+
+#######################################################################
+# +-----------------------------------------------------------------+ #
+# |                       Visuals and weather                       | #
+# +-----------------------------------------------------------------+ #
+#######################################################################
+
+BiomeTemperature: 0.7
+
+BiomeWetness: 0.8
+
+SkyColor: #7BA5FF
+
+WaterColor: #FFFFFF
+
+GrassColor: #FFFFFF
+
+GrassColorIsMultiplier: true
+
+FoliageColor: #FFFFFF
+
+FoliageColorIsMultiplier: true
+
+
+#######################################################################
+# +-----------------------------------------------------------------+ #
+# |                          Resource queue                         | #
+# +-----------------------------------------------------------------+ #
+#######################################################################
+
+Ore(minecraft:dirt,33,10,100.0,0,255,minecraft:stone)
+Ore(minecraft:gravel,33,8,100.0,0,255,minecraft:stone)
+Ore(minecraft:stone:1,33,10,100.0,0,79,minecraft:stone)
+Ore(minecraft:stone:3,33,10,100.0,0,79,minecraft:stone)
+Ore(minecraft:stone:5,33,10,100.0,0,79,minecraft:stone)
+Ore(minecraft:coal_ore,4,100,100.0,0,255,minecraft:stone)
+Ore(minecraft:iron_ore,4,100,100.0,0,255,minecraft:stone)
+Ore(minecraft:gold_ore,4,100,100.0,0,255,minecraft:stone)
+Ore(minecraft:redstone_ore,4,100,100.0,0,255,minecraft:stone)
+Ore(minecraft:diamond_ore,4,100,100.0,0,255,minecraft:stone)
+Ore(minecraft:emerald_ore,4,100,100.0,0,255,minecraft:stone)
+Ore(minecraft:lapis_ore,4,100,100.0,0,255,minecraft:stone)
+UnderGroundLake(25,60,2,5.0,0,49)
+Liquid(minecraft:water,20,100.0,8,255,minecraft:stone)
+Liquid(minecraft:lava,10,100.0,8,255,minecraft:stone)
+SmallLake(minecraft:water,4,7.0,8,119)
+SmallLake(minecraft:lava,2,1.0,8,119)
+Dungeon(8,100.0,0,255)
+Tree(5,WoolTree0,6,WoolTree1,6,WoolTree2,6,WoolTree3,6,WoolTree4,6,WoolTree5,6,WoolTree6,6,WoolTree7,6,WoolTree8,6,WoolTree9,6,WoolTree10,6,WoolTree11,6,WoolTree12,6,WoolTree13,6,WoolTree14,6,WoolTree15,6,WoolTree16,6)
+CustomObject(UseWorld)
+Grass(DoubleTallgrass,Grouped,10,15.0,minecraft:grass,minecraft:dirt)
+Grass(Tallgrass,NotGrouped,100,100.0,minecraft:grass,minecraft:dirt)
+Plant(Poppy,1,100.0,0,128,minecraft:grass,minecraft:dirt)
+Plant(Dandelion,3,100.0,0,128,minecraft:grass,minecraft:dirt)
+Plant(Sunflower,30,100.0,0,128,minecraft:grass,minecraft:dirt)
+Plant(OrangeTulip,3,25.0,0,128,minecraft:grass,minecraft:dirt)
+Plant(RedTulip,3,25.0,0,128,minecraft:grass,minecraft:dirt)
+Plant(WhiteTulip,3,25.0,0,128,minecraft:grass,minecraft:dirt)
+Plant(PinkTulip,3,25.0,0,128,minecraft:grass,minecraft:dirt)
+Plant(AzureBluet,3,100.0,0,128,minecraft:grass,minecraft:dirt)
+Plant(OxeyeDaisy,3,100.0,0,128,minecraft:grass,minecraft:dirt)
+Plant(minecraft:pumpkin,1,3.0,0,128,minecraft:grass)
+Reed(minecraft:reeds,5,100.0,0,128,minecraft:grass,minecraft:dirt,minecraft:sand)
+
+#######################################################################
+# +-----------------------------------------------------------------+ #
+# |                         Sapling resource                        | #
+# +-----------------------------------------------------------------+ #
+#######################################################################
+
+Sapling(Oak,WoolTree0,6,WoolTree1,6,WoolTree2,6,WoolTree3,6,WoolTree4,6,WoolTree5,6,WoolTree6,6,WoolTree7,6,WoolTree8,6,WoolTree9,6,WoolTree10,6,WoolTree11,6,WoolTree12,6,WoolTree13,6,WoolTree14,6,WoolTree15,6,WoolTree16,6)
+
+#######################################################################
+# +-----------------------------------------------------------------+ #
+# |                          Custom objects                         | #
+# +-----------------------------------------------------------------+ #
+#######################################################################
+
+BiomeObjects:
+
+
+#######################################################################
+# +-----------------------------------------------------------------+ #
+# |                            Structures                           | #
+# +-----------------------------------------------------------------+ #
+#######################################################################
+
+StrongholdsEnabled: true
+
+OceanMonumentsEnabled: false
+
+NetherFortressesEnabled: true
+
+MansionsEnabled: false
+
+VillageType: disabled
+
+MineshaftType: normal
+
+MineshaftRarity: 1.0
+
+RareBuildingType: disabled
+
+
+#######################################################################
+# +-----------------------------------------------------------------+ #
+# |                           Mob spawning                          | #
+# +-----------------------------------------------------------------+ #
+#######################################################################
+
+# It's not possible to change mob spawns in vanilla biomes. These
+# are the values used by vanilla for this biome. They are read-only:
+# changes to this setting are ignored and overwritten.
+
+# The monsters (skeletons, zombies, etc.) that spawn in this biome
+
+# The friendly creatures (cows, pigs, etc.) that spawn in this biome
+
+# The water creatures (only squids in vanilla) that spawn in this biome
+
+# The ambient creatures (only bats in vanila) that spawn in this biome

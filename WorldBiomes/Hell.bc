@@ -5,8 +5,15 @@
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
-BiomeExtends: 
+# This should be the value of the biomeConfig you wish to extend.
+# The extended config will be loaded, at which point the configs included below
+# will overwrite any configs loaded from the extended config.
+BiomeExtends:
 
+# When set to true, all resources of the parent biome (if any) will be copied
+# to the resources queue of this biome. If a resource in the parent biome looks
+# very similar to that of a child biome (for example, two ores of the same type)
+# it won't be copied.
 ResourceInheritance: true
 
 
@@ -16,31 +23,71 @@ ResourceInheritance: true
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
+# Biome size from 0 to GenerationDepth. Defines in which biome layer this biome will be generated (see GenerationDepth).
+# Higher numbers give a smaller biome, lower numbers a larger biome.
+# How this setting is used depends on the value of BiomeMode in the WorldConfig.
+# It will be used for:
+# - normal biomes, ice biomes, isle biomes and border biomes when BiomeMode is set to BeforeGroups
+# - biomes spawned as part of a BiomeGroup when BiomeMode is set to Normal.
+#   For biomes spawned as isles, borders or rivers other settings are available.
+#   Isle biomes:   BiomeSizeWhenIsle (see below)
+#   Border biomes: BiomeSizeWhenBorder (see below)
+#   River biomes:  RiverSize (see WorldConfig)
 BiomeSize: 4
 
+# Biome rarity from 100 to 1. If this is normal or ice biome - chance for spawn this biome then others.
+# Example for normal biome :
+#   100 rarity mean 1/6 chance than other ( with 6 default normal biomes).
+#   50 rarity mean 1/11 chance than other
+# For isle biomes see the BiomeRarityWhenIsle setting below.
+# Doesn`t work on Ocean and River (frozen versions too) biomes when not added as normal biome.
 BiomeRarity: 100
 
+# The hexadecimal color value of this biome. Used in the output of the /tc map command,
+# and used in the input of BiomeMode: FromImage.
 BiomeColor: #FF0000
 
 ####################
 # Isle biomes only #
 ####################
 
-IsleInBiome: 
+# To spawn a biome as an isle, you need to add it first to the
+# IsleBiomes list in the WorldConfig.
 
+# List of biomes in which this biome will spawn as an isle.
+# For example, Mushroom Isles spawn inside the Ocean biome.
+IsleInBiome:
+
+# Size of this biome when spawned as an isle biome in BiomeMode: Normal.
+# Valid values range from 0 to GenerationDepth.
+# Larger numbers give *smaller* islands. The biome must be smaller than the biome it's going
+# to spawn in, so the BiomeSizeWhenIsle number must be larger than the BiomeSize of the other biome.
 BiomeSizeWhenIsle: 6
 
+# Rarity of this biome when spawned as an isle biome in BiomeMode: Normal.
 BiomeRarityWhenIsle: 97
 
 ######################
 # Border biomes only #
 ######################
 
-BiomeIsBorder: 
+# To spawn a biome as a border, you need to add it first to the
+# BorderBiomes list in the WorldConfig.
 
-NotBorderNear: 
+# List of biomes this biome can be a border of.
+# For example, the Beach biome is a border on the Ocean biome, so
+# it can spawn anywhere on the border of an ocean.
+BiomeIsBorder:
 
-BiomeSizeWhenBorder: 6
+# List of biomes that cancel spawning of this biome.
+# For example, the Beach biome will never spawn next to an Extreme Hills biome.
+NotBorderNear:
+
+# Size of this biome when spawned as a border biome in BiomeMode: Normal.
+# Valid values range from 0 to GenerationDepth.
+# Larger numbers give *smaller* borders. The biome must be smaller than the biome it's going
+# to spawn in, so the BiomeSizeWhenBorder number must be larger than the BiomeSize of the other biome.
+BiomeSizeWhenBorder: 8
 
 
 #######################################################################
@@ -49,26 +96,48 @@ BiomeSizeWhenBorder: 6
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
-BiomeHeight: 1.0
+# BiomeHeight mean how much height will be added in terrain generation
+# It is double value from -10.0 to 10.0
+# Value 0.0 equivalent half of map height with all other default settings
+BiomeHeight: 0.1
 
-BiomeVolatility: 0.0
+# Biome volatility.
+BiomeVolatility: 0.2
 
+# Smooth radius between biomes. Must be between 0 and 32, inclusive. The resulting
+# smooth radius seems to be  (thisSmoothRadius + 1 + smoothRadiusOfBiomeOnOtherSide) * 4 .
+# So if two biomes next to each other have both a smooth radius of 2, the
+# resulting smooth area will be (2 + 1 + 2) * 4 = 20 blocks wide.
 SmoothRadius: 2
 
+# If this value is greater than 0, then it will affect how much, on average, the terrain will rise before leveling off when it begins to increase in elevation.
+# If the value is less than 0, then it will cause the terrain to either increase to a lower height before leveling out or decrease in height if the value is a large enough negative.
 MaxAverageHeight: 0.0
 
+# If this value is greater than 0, then it will affect how much, on average, the terrain (usually at the ottom of the ocean) will fall before leveling off when it begins to decrease in elevation.
+# If the value is less than 0, then it will cause the terrain to either fall to a lesser depth before leveling out or increase in height if the value is a large enough negative.
 MaxAverageDepth: 0.0
 
+# Another type of noise. This noise is independent from biomes. The larger the values the more chaotic/volatile landscape generation becomes.
+# Setting the values to negative will have the opposite effect and make landscape generation calmer/gentler.
 Volatility1: 0.0
 
 Volatility2: 0.0
 
+# Adjust the weight of the corresponding volatility settings. This allows you to change how prevalent you want either of the volatility settings to be in the terrain.
 VolatilityWeight1: 0.5
 
 VolatilityWeight2: 0.45
 
+# Disable all noises except Volatility1 and Volatility2. Also disable default block chance from height.
 DisableBiomeHeight: false
 
+# List of custom height factors, 17 double entries, each controls about 7
+# blocks height, starting at the bottom of the world. Positive entry - larger chance of spawn blocks, negative - smaller
+# Values which affect your configuration may be found only experimentally. Values may be very big, like ~3000.0 depends from height
+# Example:
+#   CustomHeightControl:0.0,-2500.0,0.0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+# Makes empty layer above bedrock layer.
 CustomHeightControl: 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0
 
 
@@ -103,15 +172,15 @@ RiverCustomHeightControl: 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
-StoneBlock: minecraft:stone
+StoneBlock: minecraft:netherrack
 
 SurfaceBlock: minecraft:netherrack
 
 GroundBlock: minecraft:netherrack
 
-SurfaceAndGroundControl: 
+SurfaceAndGroundControl: minecraft:dirt, minecraft:netherrack, -6, minecraft:netherrack, minecraft:netherrack, -4,minecraft:soul_sand, minecraft:netherrack, -2,minecraft:dirt, minecraft:netherrack, 0, minecraft:netherrack, minecraft:netherrack, 2,minecraft:soul_sand, minecraft:netherrack, 4,minecraft:dirt, minecraft:netherrack, 6, minecraft:netherrack, minecraft:netherrack, 7
 
-ReplacedBlocks: (minecraft:stone,minecraft:netherrack,64,255)
+ReplacedBlocks:
 
 ################################
 # Water / Lava & Frozen States #
@@ -159,36 +228,16 @@ FoliageColorIsMultiplier: true
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
-Ore(minecraft:coal_ore,4,100,100.0,0,63,minecraft:stone)
-Ore(minecraft:iron_ore,4,100,100.0,0,63,minecraft:stone)
-Ore(minecraft:gold_ore,4,100,100.0,0,63,minecraft:stone)
-Ore(minecraft:redstone_ore,4,100,100.0,0,63,minecraft:stone)
-Ore(minecraft:diamond_ore,4,100,100.0,0,63,minecraft:stone)
-Ore(minecraft:emerald_ore,4,100,100.0,0,63,minecraft:stone)
-Ore(minecraft:lapis_ore,4,100,100.0,0,63,minecraft:stone)
 Ore(minecraft:quartz_ore,50,30,100.0,0,255,minecraft:netherrack)
 Ore(minecraft:soul_sand,33,20,100.0,0,255,minecraft:netherrack)
-Ore(minecraft:end_stone,33,20,100.0,0,255,minecraft:netherrack)
-UnderGroundLake(25,60,2,5.0,0,49)
-Liquid(minecraft:water,20,100.0,8,255,minecraft:stone)
-Liquid(minecraft:lava,10,100.0,8,255,minecraft:stone)
-Liquid(minecraft:glowstone,10,100.0,8,255,minecraft:stone)
-SmallLake(minecraft:lava,10,7.0,8,119)
-SmallLake(minecraft:magma,1,7.0,60,119)
-UnderWaterOre(minecraft:diamond_block,3,14,100.0,minecraft:stone)
-UnderWaterOre(minecraft:emerald_block,3,14,100.0,minecraft:stone)
-UnderWaterOre(minecraft:gravel,6,1,100.0,minecraft:dirt,minecraft:grass)
-Cactus(minecraft:chorus_flower,20,100.0,0,255,minecraft:end_stone)
+Tree(1,HugeGlow1,33,HugeGlow2,33,HugeGlow3,100)
 Dungeon(8,100.0,0,255)
+Plant(minecraft:fire,10,100.0,0,255,minecraft:netherrack)
 Plant(RedMushroom,8,12.0,0,255,minecraft:netherrack,minecraft:dirt)
 Plant(BrownMushroom,8,25.0,0,255,minecraft:netherrack,minecraft:dirt)
-Plant(minecraft:fire,10,100.0,0,255,minecraft:netherrack)
-Plant(minecraft:nether_wart,10,100.0,0,255,minecraft:soul_sand)
-CustomObject(UseWorld)
+Plant(minecraft:nether_wart,8,100.0,0,255,minecraft:soul_sand)
 Boulder(minecraft:nether_brick,2,30.0,0,256,minecraft:netherrack)
-IceSpike(minecraft:nether_brick,HugeSpike,3,1.66,60,255,minecraft:ice,minecraft:dirt,minecraft:netherrack)
-IceSpike(minecraft:obsidian,HugeSpike,3,1.66,60,255,minecraft:ice,minecraft:dirt,minecraft:netherrack)
-IceSpike(minecraft:stained_hardened_clay:15,HugeSpike,3,1.66,60,255,minecraft:ice,minecraft:dirt,minecraft:netherrack)
+CustomObject(UseWorld)
 
 #######################################################################
 # +-----------------------------------------------------------------+ #
@@ -203,7 +252,7 @@ IceSpike(minecraft:stained_hardened_clay:15,HugeSpike,3,1.66,60,255,minecraft:ic
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
-BiomeObjects: 
+BiomeObjects:
 
 
 #######################################################################
@@ -235,11 +284,14 @@ RareBuildingType: disabled
 # +-----------------------------------------------------------------+ #
 #######################################################################
 
-SpawnMonsters: [{"mob": "minecraft:ghast", "weight": 50, "min": 4, "max": 4}, {"mob": "minecraft:zombie_pigman", "weight": 100, "min": 4, "max": 4}, {"mob": "minecraft:magma_cube", "weight": 2, "min": 4, "max": 4}, {"mob": "minecraft:enderman", "weight": 1, "min": 4, "max": 4}]
+# It's not possible to change mob spawns in vanilla biomes. These
+# are the values used by vanilla for this biome. They are read-only:
+# changes to this setting are ignored and overwritten.
 
-SpawnCreatures: []
+# The monsters (skeletons, zombies, etc.) that spawn in this biome
 
-SpawnWaterCreatures: []
+# The friendly creatures (cows, pigs, etc.) that spawn in this biome
 
-SpawnAmbientCreatures: []
+# The water creatures (only squids in vanilla) that spawn in this biome
 
+# The ambient creatures (only bats in vanila) that spawn in this biome

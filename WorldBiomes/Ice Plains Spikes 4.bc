@@ -1,0 +1,7 @@
+BiomeExtends: Ice Plains Spikes
+ResourceInheritance: true
+ReplaceToBiomeName: Ice Plains Spikes
+BiomeColor: #c5d9d9
+BiomeHeight: 4
+SmoothRadius: 5
+IceSpike(minecraft:packed_ice,HugeSpike,3,1.66,60,128,minecraft:ice,minecraft:dirt,minecraft:snow)
