@@ -19,4 +19,4 @@
 7. In game, type ```/mvtp tc-shigen```
 
 ## world screenshots
-![screenshot1](https://github.com/planethouki/images/blob/master/tc-shigen/tc-shigen_007.jpg)
+![screenshot1](https://github.com/planethouki/images/blob/master/tc-shigen/tc-shigen_007.png)
