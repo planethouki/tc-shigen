@@ -1,7 +1,6 @@
 # tc-shigen
 * A TerrainControl setting.
 * Many ore blocks, trees, wools, terracottas, etc...
-* Big hole for mining.
 * TerrainControl is one of Bukkit/Spigot plugins, and it is custom world generator.
 
 ## Dependence
